@@ -1,0 +1,50 @@
+<!--
+  @description       : Field Permissions for the specific Object.
+  @author            : ravi0389@gmail.com
+  @group             : 
+  @last modified on  : 02-21-2023
+  @last modified by  : ChangeMeIn@UserSettingsUnder.SFDoc
+-->
+<template>
+  <article class="slds-card slds-is-relative" style="overflow-y:scroll;border:4px whitesmoke solid;">
+
+    <!-- Page Header -->
+    <header class="slds-media slds-media_center slds-has-flexi-truncate">
+      <div class="slds-page-header" style="width:100%;">
+        <div class="slds-page-header__row">
+          <div class="slds-page-header__col-title">
+            <div class="slds-media">
+              <div class="slds-media__figure">
+                <lightning-icon icon-name="custom:custom19"></lightning-icon>
+              </div>
+
+              <div class="slds-media__body">
+                <div class="slds-page-header__name">
+                  <div class="slds-page-header__name-title">
+                    <h1>
+                      <span class="slds-page-header__title slds-truncate" title="Deployment Id">
+                        {deploymentId} ({deploymentResult.status}) - Deployed by {deploymentResult.createdByName}
+                        ({deploymentResult.startDate})
+                      </span>
+                    </h1>
+                  </div>
+                </div>
+                <p class="slds-page-header__name-meta"> •Total Success: {deploymentResult.numberComponentsDeployed } •
+                  Total Failures : {deploymentResult.numberComponentErrors } </p>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+    <!-- End Page Header -->
+
+    <!-- Data Table-->
+    <div class="slds-m-around_small slds-box">
+      <lightning-datatable key-field="id" data={data} columns={columns} hide-checkbox-column>
+      </lightning-datatable>
+    </div>
+     <!-- End Data Table-->
+  </article>
+</template>

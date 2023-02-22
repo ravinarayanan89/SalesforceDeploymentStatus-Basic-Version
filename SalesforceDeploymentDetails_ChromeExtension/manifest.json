@@ -1,0 +1,28 @@
+{
+"update_url": "https://clients2.google.com/service/update2/crx",
+
+
+  "manifest_version": 3,
+  "version": "2.0.0",
+  "name": "DeploymentDetails_Salesforce",
+  "description": "View all of your deployed components",
+  "content_security_policy": {"extension_pages":"script-src 'self'; object-src 'self'"},
+  "host_permissions": [ "https://*.force.com/*", "https://*.salesforce.com/*" ],
+  "permissions": [
+    "activeTab","cookies"
+  ],
+  "background": {
+    "service_worker": "extension_scripts/background.js"
+  },  
+  "content_scripts": [{
+    "js": ["extension_scripts/contentScript.js"],
+    "matches": ["<all_urls>"],
+    "all_frames":false
+ }],
+ "web_accessible_resources":[
+  {
+    "resources": [ "src/html/main.html"],
+    "matches": [ "https://*.force.com/*" ]
+  }
+  ]
+}

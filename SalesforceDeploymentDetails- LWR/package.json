@@ -1,0 +1,43 @@
+{
+  "name": "salesforce_deployment_status",
+  "version": "0.0.1",
+  "license": "MIT",
+  "private": true,
+  "scripts": {
+    "clean": "rm -rf __lwr_cache__",
+    "dev": "lwr serve",
+    "start": "lwr serve --mode prod",
+    "start:compat": "lwr serve --mode compat",
+    "start:prod-compat": "lwr serve --mode prod-compat",
+    "bundle": "browserify src/index.js > bundle.js"
+  },
+  "dependencies": {
+    "@lwc/synthetic-shadow": "^2.21.1",
+    "@salesforce-ux/design-system": "^2.18.1",
+    "Buffer": "0.0.0",
+    "browser": "^0.2.6",
+    "buffer": "^6.0.3",
+    "chart.js": "^3.8.2",
+    "jsforce": "^1.11.0",
+    "lightning-base-components": "^1.15.4-alpha",
+    "lwr": "0.7.3",
+    "process": "^0.11.10",
+    "querystring-es3": "^0.2.1",
+    "stream-browserify": "^3.0.0",
+    "timers-browserify": "^2.0.12"
+  },
+  "engines": {
+    "node": ">=14.15.4 <19"
+  },
+  "devDependencies": {
+    "@lwc/module-resolver": "^2.21.1",
+    "@lwc/rollup-plugin": "^2.21.1",
+    "@purtuga/esm-webpack-plugin": "^1.5.0",
+    "@rollup/plugin-replace": "^4.0.0",
+    "lwc": "^2.21.1",
+    "lwc-webpack-plugin": "^3.0.0",
+    "rollup": "^2.77.2",
+    "webpack": "^5.74.0",
+    "webpack-cli": "^4.10.0"
+  }
+}
